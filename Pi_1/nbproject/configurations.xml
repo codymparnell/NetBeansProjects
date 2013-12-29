@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>pi_omp.c</itemPath>
+      <itemPath>pi_pthreads.c</itemPath>
+      <itemPath>pi_pthreads_correct.c</itemPath>
+      <itemPath>pi_pthreads_hot.c</itemPath>
+      <itemPath>pi_serial.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Serial" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="pi_serial.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Pthreads" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-xinstrument=datarace</commandLine>
+          <mtLevel>1</mtLevel>
+        </cTool>
+      </compileType>
+      <item path="pi_pthreads.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Pthreads_safe" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-xinstrument=datarace</commandLine>
+          <mtLevel>1</mtLevel>
+        </cTool>
+      </compileType>
+      <item path="pi_pthreads_correct.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Pthread_Hot" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-xinstrument=datarace</commandLine>
+          <mtLevel>1</mtLevel>
+        </cTool>
+      </compileType>
+      <item path="pi_pthreads_hot.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="OpenMP" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-xinstrument=datarace</commandLine>
+          <mtLevel>3</mtLevel>
+        </cTool>
+      </compileType>
+      <item path="pi_omp.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
