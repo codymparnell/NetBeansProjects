@@ -71,7 +71,7 @@ public class HTMLEditorApp extends Application {
         vRoot.setSpacing(5);
 
         htmlEditor = new HTMLEditor();
-        htmlEditor.setPrefSize(500, 245);
+        htmlEditor.setPrefSize(1880, 700);
         htmlEditor.setHtmlText(INITIAL_TEXT);
         vRoot.getChildren().add(htmlEditor);
 
